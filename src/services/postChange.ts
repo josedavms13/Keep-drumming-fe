@@ -1,8 +1,10 @@
 import axios, {AxiosResponse} from "axios";
+import {baseUrl} from "./config/api.config";
 
 export async function postChange(movement: number): Promise<AxiosResponse> {
    const body = {
-      pos: movement
+      pos: movement,
+      returnArray: true,
    }
-   return await axios.post("http://localhost:4001/api/v1/post-position", body)
+   return await axios.post(baseUrl + "/post-position", body)
 }
