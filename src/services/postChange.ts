@@ -6,5 +6,6 @@ export async function postChange(movement: number): Promise<AxiosResponse> {
       pos: movement,
       returnArray: true,
    }
-   return await axios.post(baseUrl + "/post-position", body)
+   console.log("requesting to: ", baseUrl + "/post-position")
+   return await axios.post("http://" + baseUrl + "/post-position", body)
 }
